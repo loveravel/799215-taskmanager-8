@@ -19,28 +19,29 @@ const FILTER_NAMES = [
   `archive`,
 ];
 
-const renderFilter = () => {
-  let filtersHTML = ``;
-  FILTER_NAMES.forEach((it) => {
-    let itLowerCase = it.toLowerCase();
-    let filterID = `filter__` + itLowerCase;
-    let amountTasks = getRandomInteger(0, 100);
-    filtersHTML += `<input
+const getFilterLayout = (filterName, amountTasks) => {
+  const filterNameLowerCase = filterName.toLowerCase();
+  const filterID = `filter__` + filterNameLowerCase;
+  return (`<input
       type="radio"
       id="${filterID}"
       class="filter__input visually-hidden"
       name="filter"
-      ${itLowerCase === `all` ? `checked` : ``}
+      ${filterNameLowerCase === `all` ? `checked` : ``}
       ${amountTasks ? `` : `disabled`}
     />
     <label for="${filterID}" class="filter__label">
-      ${itLowerCase} <span class="filter__all-count">${amountTasks}</span></label
-    >`;
-  });
-  filtersContainer.innerHTML = filtersHTML;
+      ${filterNameLowerCase} <span class="filter__all-count">${amountTasks}</span></label
+    >`);
 };
 
-renderFilter();
+const renderFilters = () => {
+  FILTER_NAMES.forEach((it) => {
+    filtersContainer.innerHTML += getFilterLayout(it, getRandomInteger(0, 100));
+  });
+};
+
+renderFilters();
 
 /* Отрисовка задач */
 const tasksContainer = document.querySelector(`.board__tasks`);
