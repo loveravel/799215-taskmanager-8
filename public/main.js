@@ -53,7 +53,7 @@ const TASK_COLORS = [
 
 const renderTask = () => {
   const taskElement = document.createElement(`article`);
-  let taskColor = TASK_COLORS[getRandomInteger(0, TASK_COLORS.length - 1)];
+  const taskColor = TASK_COLORS[getRandomInteger(0, TASK_COLORS.length - 1)];
   taskElement.className = `card card--${taskColor}`;
 
   taskElement.innerHTML = `<form class="card__form" method="get">
