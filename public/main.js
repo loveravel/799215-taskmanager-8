@@ -59,15 +59,15 @@ const renderTask = () => {
   taskElement.innerHTML = `<form class="card__form" method="get">
     <div class="card__inner">
       <div class="card__control">
-        <button type="button" class="card__btn card__btn&#45;&#45;edit">
+        <button type="button" class="card__btn card__btn--edit">
           edit
         </button>
-        <button type="button" class="card__btn card__btn&#45;&#45;archive">
+        <button type="button" class="card__btn card__btn--archive">
           archive
         </button>
         <button
           type="button"
-          class="card__btn card__btn&#45;&#45;favorites card__btn&#45;&#45;disabled"
+          class="card__btn card__btn--favorites card__btn--disabled"
         >
           favorites
         </button>
@@ -131,7 +131,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   value="mo"
                 />
                 <label class="card__repeat-day" for="repeat-mo-1"
-                  >mo</label
+                >mo</label
                 >
                 <input
                   class="visually-hidden card__repeat-day-input"
@@ -142,7 +142,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   checked
                 />
                 <label class="card__repeat-day" for="repeat-tu-1"
-                  >tu</label
+                >tu</label
                 >
                 <input
                   class="visually-hidden card__repeat-day-input"
@@ -152,7 +152,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   value="we"
                 />
                 <label class="card__repeat-day" for="repeat-we-1"
-                  >we</label
+                >we</label
                 >
                 <input
                   class="visually-hidden card__repeat-day-input"
@@ -162,7 +162,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   value="th"
                 />
                 <label class="card__repeat-day" for="repeat-th-1"
-                  >th</label
+                >th</label
                 >
                 <input
                   class="visually-hidden card__repeat-day-input"
@@ -173,7 +173,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   checked
                 />
                 <label class="card__repeat-day" for="repeat-fr-1"
-                  >fr</label
+                >fr</label
                 >
                 <input
                   class="visually-hidden card__repeat-day-input"
@@ -183,7 +183,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   id="repeat-sa-1"
                 />
                 <label class="card__repeat-day" for="repeat-sa-1"
-                  >sa</label
+                >sa</label
                 >
                 <input
                   class="visually-hidden card__repeat-day-input"
@@ -194,7 +194,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
                   checked
                 />
                 <label class="card__repeat-day" for="repeat-su-1"
-                  >su</label
+                >su</label
                 >
               </div>
             </fieldset>
@@ -214,7 +214,7 @@ This is example of new task, you can add picture, set date and time, add tags.</
           </div>
         </div>
 
-        <label class="card__img-wrap card__img-wrap&#45;&#45;empty">
+        <label class="card__img-wrap card__img-wrap--empty">
           <input
             type="file"
             class="card__img-input visually-hidden"
@@ -233,63 +233,63 @@ This is example of new task, you can add picture, set date and time, add tags.</
             <input
               type="radio"
               id="color-black-1"
-              class="card__color-input card__color-input&#45;&#45;black visually-hidden"
+              class="card__color-input card__color-input--black visually-hidden"
               name="color"
               value="black"
               checked
             />
             <label
               for="color-black-1"
-              class="card__color card__color&#45;&#45;black"
-              >black</label
+              class="card__color card__color--black"
+            >black</label
             >
             <input
               type="radio"
               id="color-yellow-1"
-              class="card__color-input card__color-input&#45;&#45;yellow visually-hidden"
+              class="card__color-input card__color-input--yellow visually-hidden"
               name="color"
               value="yellow"
             />
             <label
               for="color-yellow-1"
-              class="card__color card__color&#45;&#45;yellow"
-              >yellow</label
+              class="card__color card__color--yellow"
+            >yellow</label
             >
             <input
               type="radio"
               id="color-blue-1"
-              class="card__color-input card__color-input&#45;&#45;blue visually-hidden"
+              class="card__color-input card__color-input--blue visually-hidden"
               name="color"
               value="blue"
             />
             <label
               for="color-blue-1"
-              class="card__color card__color&#45;&#45;blue"
-              >blue</label
+              class="card__color card__color--blue"
+            >blue</label
             >
             <input
               type="radio"
               id="color-green-1"
-              class="card__color-input card__color-input&#45;&#45;green visually-hidden"
+              class="card__color-input card__color-input--green visually-hidden"
               name="color"
               value="green"
             />
             <label
               for="color-green-1"
-              class="card__color card__color&#45;&#45;green"
-              >green</label
+              class="card__color card__color--green"
+            >green</label
             >
             <input
               type="radio"
               id="color-pink-1"
-              class="card__color-input card__color-input&#45;&#45;pink visually-hidden"
+              class="card__color-input card__color-input--pink visually-hidden"
               name="color"
               value="pink"
             />
             <label
               for="color-pink-1"
-              class="card__color card__color&#45;&#45;pink"
-              >pink</label
+              class="card__color card__color--pink"
+            >pink</label
             >
           </div>
         </div>
@@ -321,3 +321,4 @@ for (let i = 0; i < filterElements.length; i++) {
     renderTasks(getRandomInteger(1, 10));
   });
 }
+
