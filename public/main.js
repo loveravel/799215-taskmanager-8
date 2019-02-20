@@ -9,7 +9,7 @@ const getRandomInteger = (minimumNumber, maximumNumber) => {
 
 /* Отрисовка фильтров */
 const filtersContainer = document.querySelector(`.main__filter`);
-const FILTERS_NAME = [
+const FILTER_NAMES = [
   `all`,
   `overdue`,
   `today`,
@@ -21,7 +21,7 @@ const FILTERS_NAME = [
 
 const renderFilter = () => {
   let filtersHTML = ``;
-  FILTERS_NAME.forEach((it) => {
+  FILTER_NAMES.forEach((it) => {
     let itLowerCase = it.toLowerCase();
     let filterID = `filter__` + itLowerCase;
     let amountTasks = getRandomInteger(0, 100);
