@@ -315,10 +315,9 @@ renderTasks();
 
 /* Обработка события клика по фильтру */
 const filterElements = document.querySelectorAll(`.filter__input`);
-for (let i = 0; i < filterElements.length; i++) {
-  filterElements[i].addEventListener(`click`, () => {
+filterElements.forEach((it) => {
+  it.addEventListener(`click`, () => {
     tasksContainer.innerHTML = ``;
     renderTasks(getRandomInteger(1, 10));
   });
-}
-
+});
