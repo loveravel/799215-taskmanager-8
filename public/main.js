@@ -9,7 +9,7 @@ const getRandomInteger = (min, max) => {
 
 /* Отрисовка фильтров */
 const filtersContainer = document.querySelector(`.main__filter`);
-const FILTERS = [
+const FILTERS_NAME = [
   `all`,
   `overdue`,
   `today`,
@@ -21,7 +21,7 @@ const FILTERS = [
 
 const renderFilter = () => {
   let filtersHTML = ``;
-  FILTERS.forEach((it) => {
+  FILTERS_NAME.forEach((it) => {
     let itLowerCase = it.toLowerCase();
     let filterID = `filter__` + itLowerCase;
     let amountTasks = getRandomInteger(0, 100);
@@ -305,8 +305,19 @@ This is example of new task, you can add picture, set date and time, add tags.</
   tasksContainer.appendChild(taskElement);
 };
 
-const DEFAULT_AMOUNT_TASKS = 7;
+const renderTasks = (amountTasks = 7) => {
+  for (let i = 0; i < amountTasks; i++) {
+    renderTask();
+  }
+};
 
-for (let i = 0; i < DEFAULT_AMOUNT_TASKS; i++) {
-  renderTask();
+renderTasks();
+
+/* Обработка события клика по фильтру */
+const filterElements = document.querySelectorAll(`.filter__input`);
+for (let i = 0; i < filterElements.length; i++) {
+  filterElements[i].addEventListener(`click`, () => {
+    tasksContainer.innerHTML = ``;
+    renderTasks(getRandomInteger(1, 10));
+  });
 }
