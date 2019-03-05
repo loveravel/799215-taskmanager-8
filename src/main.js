@@ -22,7 +22,8 @@ const FILTER_NAMES = [
 
 const renderFilters = () => {
   FILTER_NAMES.forEach((it) => {
-    filtersContainer.innerHTML += makeFilter(it, getRandomInteger(0, 100));
+    const filter = makeFilter(it, getRandomInteger(0, 100));
+    filtersContainer.insertAdjacentHTML(`beforeend`, filter);
   });
 };
 
